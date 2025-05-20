@@ -26,7 +26,7 @@ if uploaded_file:
     )
 
     if canvas_result.image_data is not None:
-        # Crear la máscara binaria (zonas blancas = marcas a borrar)
+        # Crear la máscara binaria
         mask = cv2.cvtColor(np.array(canvas_result.image_data), cv2.COLOR_RGBA2GRAY)
         _, mask = cv2.threshold(mask, 1, 255, cv2.THRESH_BINARY)
 
